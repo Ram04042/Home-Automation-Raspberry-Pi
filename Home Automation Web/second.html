@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="secondstyle.css">
+  </head>
+    <body>
+	<div class="contain">
+  <table border=0px align=center cellpadding=15px cellspacing=10px>
+  <tr align=center>
+  <td class="t1"><img src=AC.png height=150 width=180><br><br>
+  <div id="ac_label"></div>
+  <input type=button onclick="ac_btn_on()" class="btn" value="ON">
+  <input type=button onclick="ac_btn_off()" class="btn" value="OFF">
+  </td>
+  <td class="t2"><img src=TV.png height=150 width=180><br><br>
+  <div id="tv_label"></div>
+  <input type=button onclick="tv_btn_on()" class="btn" value="ON">
+  <input type=button onclick="tv_btn_off()" class="btn" value="OFF"></td>
+  </tr><br><br>
+  <tr align=center>
+  <td class="t3"><img src=ST.png height=150 width=180><br><br>
+  <div id="set_label"></div>
+  <input type=button onclick="set_btn_on()" class="btn" value="ON">
+  <input type=button onclick="set_btn_off()" class="btn" value="OFF"></td>
+  <td class="t4"><img src=HT.png height=150 width=180><br><br>
+  <div id="home_label"></div>
+  <input type=button onclick="home_btn_on()" class="btn" value="ON">
+  <input type=button onclick="home_btn_off()" class="btn" value="OFF"></td>
+  </tr></table></div>
+   </body>
+   
+   
+   
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCE80Bh5gjQeNRMMaBrmeeUUJRBaqFup0I",
+    authDomain: "home-automation-c67a9.firebaseapp.com",
+    databaseURL: "https://home-automation-c67a9.firebaseio.com",
+    projectId: "home-automation-c67a9",
+    storageBucket: "home-automation-c67a9.appspot.com",
+    messagingSenderId: "225816518709"
+  };
+  firebase.initializeApp(config);
+    
+  
+  var ac_label=document.getElementById('ac_label');
+  
+  var database = firebase.database();
+  
+  
+  
+  var ref = firebase.database().ref().child('ac_status');
+      ref.on("value", function(snapshot) {
+         
+         if(snapshot.val() == "1")
+			{ac_label.style.backgroundColor = "Green";}
+         else
+            {ac_label.style.backgroundColor = "RED";}
+      })
+  
+  var ref = firebase.database().ref().child('tv_status');
+      ref.on("value", function(snapshot) {
+         
+         if(snapshot.val() == "1")
+			{tv_label.style.backgroundColor = "Green";}
+         else
+            {tv_label.style.backgroundColor = "RED";}
+      })
+  
+  
+  var ref = firebase.database().ref().child('set_status');
+      ref.on("value", function(snapshot) {
+         
+         if(snapshot.val() == "1")
+			{set_label.style.backgroundColor = "Green";}
+         else
+            {set_label.style.backgroundColor = "RED";}
+      })
+  
+  
+  var ref = firebase.database().ref().child('home_status');
+      ref.on("value", function(snapshot) {
+         
+         if(snapshot.val() == "1")
+			{home_label.style.backgroundColor = "Green";}
+         else
+            {home_label.style.backgroundColor = "RED";}
+      })
+  
+  
+  
+  function ac_btn_on(){
+        var ac_statusfb = firebase.database().ref().child("ac_status");
+		ac_statusfb.set(1);
+        
+  
+  }
+  
+  function ac_btn_off(){
+        var ac_statusfb = firebase.database().ref().child("ac_status");
+		ac_statusfb.set(0);
+        
+  
+  }
+  
+  function tv_btn_on(){
+        var tv_statusfb = firebase.database().ref().child("tv_status");
+		tv_statusfb.set(1);
+        
+  
+  }
+  
+  function tv_btn_off(){
+        var tv_statusfb = firebase.database().ref().child("tv_status");
+		tv_statusfb.set(0);
+        
+  
+  }
+  
+  function set_btn_on(){
+        var set_statusfb = firebase.database().ref().child("set_status");
+		set_statusfb.set(1);
+        
+  
+  }
+  
+  function set_btn_off(){
+        var set_statusfb = firebase.database().ref().child("set_status");
+		set_statusfb.set(0);
+        
+  
+  }
+  
+  function home_btn_on(){
+        var home_statusfb = firebase.database().ref().child("home_status");
+		home_statusfb.set(1);
+        
+  
+  }
+  
+  function home_btn_off(){
+        var home_statusfb = firebase.database().ref().child("home_status");
+		home_statusfb.set(0);
+        
+  
+  }
+  
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+</html>

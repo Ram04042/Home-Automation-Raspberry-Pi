@@ -1,0 +1,59 @@
+table{
+	padding:2%;
+	padding-left:50px;
+	border-collapse:collapse;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(pic1.png) no-repeat;
+  background-size: cover;
+}
+table{
+	padding-top:%;
+}
+.t1{
+	Border-bottom:2px solid black;
+	border-right:2px solid black;
+}
+.t2{
+	border-bottom:2px solid black;
+	border-left:2px solid black;
+}
+.t3{
+	border-right:2px solid black;
+}
+.btn{
+  width: 30%;
+  background: none;
+  border: 2px solid black;
+  color: white;
+  padding: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 8px 0;
+  Transition:0.6s ease;
+}
+.btn:hover{
+	background-color:white;
+	color:black;
+}
+.contain{
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 0px; 
+  width: 600px;
+  height: 590px;
+  margin: 20px 400px 20px;
+}
+
+#ac_label,#tv_label,#set_label,#home_label{
+	float:left;
+	border-radius:5px;
+	width:10px;
+	height:10px;
+	background-color:red;
+}
+	
+	

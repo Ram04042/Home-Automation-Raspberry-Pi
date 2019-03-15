@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Project</title>
+    <link rel="stylesheet" href="style.css">
+	<script language="javascript">
+function check(form)/*function to check userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are matching*/
+ if(form.userid.value == "MI101" && form.pswrd.value == "sandshome")
+  {
+    window.open('second.html')/*opens the target page while Id & password matches*/
+  }
+ else
+ {
+   alert("Enter valid Password and UserID")/*displays error message*/
+  }
+}
+</script>
+  </head>
+  <body>
+  <table>
+  <tr><td>
+<div class="logo">
+<img src=whitel.png height=100 width=300>
+ </diV></td>
+ <td><div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="quote blink-two">
+<i>"Every object,device and every familiar part of the traditional 
+home,is being equipped with smart circuitry"</i></div></td></tr></table>
+<form name="signin">
+<br><br><div class="lp sidepic"><img src=finalpic1.png height=400 width=700></div>
+<div class="login-box loginbar">
+  <h1> Member Login</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" placeholder="ID" name="userid">
+  </div>
+  </br>
+
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="password" placeholder="Password" name="pswrd">
+  </div>
+  </br>
+
+  <input type="button" class="btn" value="Sign in" onclick="check(this.form)" id="heft">
+  </form>
+</div>
+  </body>
+</html>
